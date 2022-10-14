@@ -60,4 +60,6 @@ int main(int argc, char* argv[])
         cerr << "[Error] an unknown error occurred" << endl;
         return -1;
     }
+	
+	return 0;
 }
