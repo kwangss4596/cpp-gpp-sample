@@ -6,20 +6,10 @@
 trigger:
 - master
 
+pool:
+  vmImage: ubuntu-latest
 
-stages:
-- stage: 'Build'
-  displayName: 'Build App'
-  jobs:
-  - job: 'Build'
-    displayName: 'Build job'
-    pool:
-      vmImage: ubuntu-latest
-      demands:
-      - npm
-    steps:
-    - script: make
-      displayName: 'make'
-    - publish: '$(Build.ArtifactStagingDirectory)'
-      artifact: drop
-
+steps:
+- script: |
+    make
+  displayName: 'make'
