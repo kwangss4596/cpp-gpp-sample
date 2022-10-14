@@ -17,10 +17,9 @@ stages:
       vmImage: ubuntu-latest
       demands:
       - npm
-  steps:
-  - script: |
-      make
-    displayName: 'make'
-  - publish: '$(Build.ArtifactStagingDirectory)'
-    artifact: drop
+    steps:
+    - script: make
+      displayName: 'make'
+    - publish: '$(Build.ArtifactStagingDirectory)'
+      artifact: drop
 
